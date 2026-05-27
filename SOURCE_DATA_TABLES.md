@@ -1,8 +1,8 @@
 # Smart City Operations Suite Source Data Tables
 
-Mapped source projects: 5
+Mapped source projects: 6
 
-Detected source tables: 261
+Detected source tables: 286
 
 | Source Project | Table | Framework | Columns | Source File |
 | --- | --- | --- | ---: | --- |
@@ -81,6 +81,31 @@ Detected source tables: 261
 | AIPublicHealthEpidemiologyTracker | vaccinations | SQL | 12 | backend/seed.js |
 | AIPublicHealthEpidemiologyTracker | vector_diseases | SQL | 12 | backend/seed.js |
 | AIPublicHealthEpidemiologyTracker | water_quality | SQL | 12 | backend/seed.js |
+| AISmartCityTrafficSignal | ai_results | SQL | 5 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | attachments | SQL | 9 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | audit_log | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | bike_phases | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | communications_cabinets | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | controllers | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | detectors | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | emergency_preemptions | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | equity_neighborhoods | SQL | 15 | backend/migrations/002_pass7_backlog.sql |
+| AISmartCityTrafficSignal | incidents | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | intersections | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | notifications | SQL | 8 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | pedestrian_phases | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | performance_metrics | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | sensors_health | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | signal_groups | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | signal_plans | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | signals | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | special_events | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | transit_priorities | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | users | SQL | 7 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | video_feeds | SQL | 10 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | webhook_deliveries | SQL | 7 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | webhooks | SQL | 8 | backend/migrations/001_schema.sql |
+| AISmartCityTrafficSignal | work_zones | SQL | 10 | backend/migrations/001_schema.sql |
 | AIUrbanPlanningZoningSimulator | ai_results | SQL | 6 | server/routes/landUse.js |
 | AIUrbanPlanningZoningSimulator | gap_features | SQL | 6 | server/routes/gapCriticalOnly1AiEndpointDespiteScenarioCompliance.js |
 | AIUrbanPlanningZoningSimulator | gap_features | SQL | 6 | server/routes/gapNoAuditLogging.js |

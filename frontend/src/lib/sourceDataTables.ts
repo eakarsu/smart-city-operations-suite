@@ -7133,6 +7133,2407 @@ export const sourceDataTables: SourceDataTable[] = [
     ]
   },
   {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-ai-results",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "ai_results",
+    "displayName": "Ai Results",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "feature",
+        "type": "VARCHAR",
+        "nullable": false,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "feature         VARCHAR(80) NOT NULL"
+      },
+      {
+        "name": "input",
+        "type": "JSONB",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "input           JSONB"
+      },
+      {
+        "name": "output",
+        "type": "JSONB",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "output          JSONB"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-attachments",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "attachments",
+    "displayName": "Attachments",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "resource_type",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "resource_type   VARCHAR(60)"
+      },
+      {
+        "name": "resource_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "resource_id     INTEGER"
+      },
+      {
+        "name": "filename",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "filename        VARCHAR(255)"
+      },
+      {
+        "name": "original_name",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "original_name   VARCHAR(255)"
+      },
+      {
+        "name": "mimetype",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "mimetype        VARCHAR(120)"
+      },
+      {
+        "name": "size_bytes",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "size_bytes      INTEGER"
+      },
+      {
+        "name": "uploaded_by",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "uploaded_by     VARCHAR(150)"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-audit-log",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "audit_log",
+    "displayName": "Audit Log",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "entry_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "entry_id        VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "actor",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "actor           VARCHAR(120)"
+      },
+      {
+        "name": "target",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "target          VARCHAR(200)"
+      },
+      {
+        "name": "action",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "action          VARCHAR(80)"
+      },
+      {
+        "name": "result",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "result          VARCHAR(40)"
+      },
+      {
+        "name": "ts",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "ts              TIMESTAMPTZ"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-bike-phases",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "bike_phases",
+    "displayName": "Bike Phases",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id                 SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "phase_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "phase_id           VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id    VARCHAR(50)"
+      },
+      {
+        "name": "duration_seconds",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "12",
+        "sourceLine": "duration_seconds   INTEGER DEFAULT 12"
+      },
+      {
+        "name": "conflict_movements",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "conflict_movements VARCHAR(200)"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'active'",
+        "sourceLine": "status             VARCHAR(30) DEFAULT 'active'"
+      },
+      {
+        "name": "last_event",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "last_event         TIMESTAMPTZ"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes              TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at         TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at         TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-communications-cabinets",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "communications_cabinets",
+    "displayName": "Communications Cabinets",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "cabinet_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "cabinet_id      VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50)"
+      },
+      {
+        "name": "vendor",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "vendor          VARCHAR(80)"
+      },
+      {
+        "name": "last_check",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "last_check      TIMESTAMPTZ"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'healthy'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'healthy'"
+      },
+      {
+        "name": "ip_address",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "ip_address      VARCHAR(40)"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-controllers",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "controllers",
+    "displayName": "Controllers",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "controller_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "controller_id   VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50)"
+      },
+      {
+        "name": "vendor",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "vendor          VARCHAR(80)"
+      },
+      {
+        "name": "firmware",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "firmware        VARCHAR(60)"
+      },
+      {
+        "name": "last_event",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "last_event      TIMESTAMPTZ"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'online'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'online'"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-detectors",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "detectors",
+    "displayName": "Detectors",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "detector_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "detector_id     VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50)"
+      },
+      {
+        "name": "type",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "type            VARCHAR(40)"
+      },
+      {
+        "name": "lane",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "lane            VARCHAR(40)"
+      },
+      {
+        "name": "last_event",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "last_event      TIMESTAMPTZ"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'active'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'active'"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-emergency-preemptions",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "emergency_preemptions",
+    "displayName": "Emergency Preemptions",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "preempt_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "preempt_id      VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50)"
+      },
+      {
+        "name": "vehicle",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "vehicle         VARCHAR(80)"
+      },
+      {
+        "name": "started_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "started_at      TIMESTAMPTZ"
+      },
+      {
+        "name": "ended_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "ended_at        TIMESTAMPTZ"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'active'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'active'"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-002-pass7-backlog-sql-equity-neighborhoods",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "equity_neighborhoods",
+    "displayName": "Equity Neighborhoods",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/002_pass7_backlog.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id                            SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "neighborhood_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "neighborhood_id               VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "name                          VARCHAR(200)"
+      },
+      {
+        "name": "census_tract",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "census_tract                  VARCHAR(40)"
+      },
+      {
+        "name": "population",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "0",
+        "sourceLine": "population                    INTEGER DEFAULT 0"
+      },
+      {
+        "name": "median_household_income",
+        "type": "NUMERIC",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "median_household_income       NUMERIC(12, 2)"
+      },
+      {
+        "name": "pct_low_income",
+        "type": "NUMERIC",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "pct_low_income                NUMERIC(5, 2)"
+      },
+      {
+        "name": "pct_no_vehicle",
+        "type": "NUMERIC",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "pct_no_vehicle                NUMERIC(5, 2)"
+      },
+      {
+        "name": "pct_senior_65plus",
+        "type": "NUMERIC",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "pct_senior_65plus             NUMERIC(5, 2)"
+      },
+      {
+        "name": "pct_disabled",
+        "type": "NUMERIC",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "pct_disabled                  NUMERIC(5, 2)"
+      },
+      {
+        "name": "intersection_ids",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_ids              TEXT"
+      },
+      {
+        "name": "avg_incident_response_minutes",
+        "type": "NUMERIC",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "avg_incident_response_minutes NUMERIC(8, 2)"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes                         TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at                    TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at                    TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-incidents",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "incidents",
+    "displayName": "Incidents",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "incident_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "incident_id     VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50)"
+      },
+      {
+        "name": "type",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "type            VARCHAR(60)"
+      },
+      {
+        "name": "severity",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'medium'",
+        "sourceLine": "severity        VARCHAR(20) DEFAULT 'medium'"
+      },
+      {
+        "name": "opened_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "opened_at       TIMESTAMPTZ"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'open'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'open'"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-intersections",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "intersections",
+    "displayName": "Intersections",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "name            VARCHAR(200)"
+      },
+      {
+        "name": "location",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "location        VARCHAR(200)"
+      },
+      {
+        "name": "signal_count",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "0",
+        "sourceLine": "signal_count    INTEGER DEFAULT 0"
+      },
+      {
+        "name": "last_retimed",
+        "type": "DATE",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "last_retimed    DATE"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'operational'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'operational'"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-notifications",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "notifications",
+    "displayName": "Notifications",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "user_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "user_id         INTEGER"
+      },
+      {
+        "name": "title",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "title           VARCHAR(200)"
+      },
+      {
+        "name": "body",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "body            TEXT"
+      },
+      {
+        "name": "severity",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'info'",
+        "sourceLine": "severity        VARCHAR(20) DEFAULT 'info'"
+      },
+      {
+        "name": "source",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "source          VARCHAR(80)"
+      },
+      {
+        "name": "read_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "read_at         TIMESTAMPTZ"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-pedestrian-phases",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "pedestrian_phases",
+    "displayName": "Pedestrian Phases",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "phase_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "phase_id        VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50)"
+      },
+      {
+        "name": "walk_seconds",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "7",
+        "sourceLine": "walk_seconds    INTEGER DEFAULT 7"
+      },
+      {
+        "name": "flash_seconds",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "18",
+        "sourceLine": "flash_seconds   INTEGER DEFAULT 18"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'active'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'active'"
+      },
+      {
+        "name": "last_event",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "last_event      TIMESTAMPTZ"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-performance-metrics",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "performance_metrics",
+    "displayName": "Performance Metrics",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "metric_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "metric_id       VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50)"
+      },
+      {
+        "name": "kpi",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "kpi             VARCHAR(80)"
+      },
+      {
+        "name": "value",
+        "type": "NUMERIC",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "value           NUMERIC(12, 3)"
+      },
+      {
+        "name": "period",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "period          VARCHAR(40)"
+      },
+      {
+        "name": "target",
+        "type": "NUMERIC",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "target          NUMERIC(12, 3)"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-sensors-health",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "sensors_health",
+    "displayName": "Sensors Health",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "health_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "health_id       VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "sensor_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "sensor_id       VARCHAR(50)"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'ok'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'ok'"
+      },
+      {
+        "name": "last_signal",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "last_signal     TIMESTAMPTZ"
+      },
+      {
+        "name": "battery_pct",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "100",
+        "sourceLine": "battery_pct     INTEGER DEFAULT 100"
+      },
+      {
+        "name": "ts",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "ts              TIMESTAMPTZ"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-signal-groups",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "signal_groups",
+    "displayName": "Signal Groups",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id                  SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "group_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "group_id            VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "name                VARCHAR(200)"
+      },
+      {
+        "name": "intersections_count",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "0",
+        "sourceLine": "intersections_count INTEGER DEFAULT 0"
+      },
+      {
+        "name": "coordinator",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "coordinator         VARCHAR(120)"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'active'",
+        "sourceLine": "status              VARCHAR(30) DEFAULT 'active'"
+      },
+      {
+        "name": "mode",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "mode                VARCHAR(40)"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes               TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at          TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at          TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-signal-plans",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "signal_plans",
+    "displayName": "Signal Plans",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "plan_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "plan_id         VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50)"
+      },
+      {
+        "name": "period",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "period          VARCHAR(40)"
+      },
+      {
+        "name": "version",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "version         VARCHAR(40)"
+      },
+      {
+        "name": "deployed_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "deployed_at     TIMESTAMPTZ"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'draft'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'draft'"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-signals",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "signals",
+    "displayName": "Signals",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "signal_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "signal_id       VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50)"
+      },
+      {
+        "name": "direction",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "direction       VARCHAR(40)"
+      },
+      {
+        "name": "color",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "color           VARCHAR(20)"
+      },
+      {
+        "name": "last_change",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "last_change     TIMESTAMPTZ"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'normal'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'normal'"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-special-events",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "special_events",
+    "displayName": "Special Events",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id                  SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "event_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "event_id            VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "name                VARCHAR(200)"
+      },
+      {
+        "name": "location",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "location            VARCHAR(200)"
+      },
+      {
+        "name": "expected_attendance",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "0",
+        "sourceLine": "expected_attendance INTEGER DEFAULT 0"
+      },
+      {
+        "name": "started_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "started_at          TIMESTAMPTZ"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'scheduled'",
+        "sourceLine": "status              VARCHAR(30) DEFAULT 'scheduled'"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes               TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at          TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at          TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-transit-priorities",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "transit_priorities",
+    "displayName": "Transit Priorities",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "priority_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "priority_id     VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50)"
+      },
+      {
+        "name": "route",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "route           VARCHAR(80)"
+      },
+      {
+        "name": "vehicle_type",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "vehicle_type    VARCHAR(40)"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'enabled'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'enabled'"
+      },
+      {
+        "name": "last_used",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "last_used       TIMESTAMPTZ"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-users",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "users",
+    "displayName": "Users",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "email",
+        "type": "VARCHAR",
+        "nullable": false,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "email           VARCHAR(150) UNIQUE NOT NULL"
+      },
+      {
+        "name": "password",
+        "type": "VARCHAR",
+        "nullable": false,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "password        VARCHAR(120) NOT NULL"
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "name            VARCHAR(120)"
+      },
+      {
+        "name": "role",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'viewer'",
+        "sourceLine": "role            VARCHAR(20) DEFAULT 'viewer'"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-video-feeds",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "video_feeds",
+    "displayName": "Video Feeds",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "feed_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "feed_id         VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "intersection_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "intersection_id VARCHAR(50)"
+      },
+      {
+        "name": "camera_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "camera_id       VARCHAR(50)"
+      },
+      {
+        "name": "stream_url",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "stream_url      VARCHAR(500)"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'streaming'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'streaming'"
+      },
+      {
+        "name": "last_image",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "last_image      TIMESTAMPTZ"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-webhook-deliveries",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "webhook_deliveries",
+    "displayName": "Webhook Deliveries",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "webhook_id",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "webhook_id      INTEGER"
+      },
+      {
+        "name": "event",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "event           VARCHAR(120)"
+      },
+      {
+        "name": "payload",
+        "type": "JSONB",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "payload         JSONB"
+      },
+      {
+        "name": "status_code",
+        "type": "INTEGER",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "status_code     INTEGER"
+      },
+      {
+        "name": "response_body",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "response_body   TEXT"
+      },
+      {
+        "name": "attempted_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "attempted_at    TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-webhooks",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "webhooks",
+    "displayName": "Webhooks",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "name            VARCHAR(120)"
+      },
+      {
+        "name": "url",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "url             VARCHAR(500)"
+      },
+      {
+        "name": "secret",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "secret          VARCHAR(120)"
+      },
+      {
+        "name": "events",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "events          TEXT"
+      },
+      {
+        "name": "active",
+        "type": "BOOLEAN",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "TRUE",
+        "sourceLine": "active          BOOLEAN DEFAULT TRUE"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
+    "id": "ai-smart-city-traffic-signal-backend-migrations-001-schema-sql-work-zones",
+    "sourceProject": "AISmartCityTrafficSignal",
+    "name": "work_zones",
+    "displayName": "Work Zones",
+    "framework": "SQL",
+    "sourceFile": "backend/migrations/001_schema.sql",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true,
+        "primaryKey": true,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "id              SERIAL PRIMARY KEY"
+      },
+      {
+        "name": "zone_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": true,
+        "defaultValue": "",
+        "sourceLine": "zone_id         VARCHAR(50) UNIQUE"
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "name            VARCHAR(200)"
+      },
+      {
+        "name": "location",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "location        VARCHAR(200)"
+      },
+      {
+        "name": "started_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "started_at      TIMESTAMPTZ"
+      },
+      {
+        "name": "expected_end",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "expected_end    TIMESTAMPTZ"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "'active'",
+        "sourceLine": "status          VARCHAR(30) DEFAULT 'active'"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "",
+        "sourceLine": "notes           TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "created_at      TIMESTAMPTZ DEFAULT NOW()"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMPTZ",
+        "nullable": true,
+        "primaryKey": false,
+        "unique": false,
+        "defaultValue": "NOW()",
+        "sourceLine": "updated_at      TIMESTAMPTZ DEFAULT NOW()"
+      }
+    ]
+  },
+  {
     "id": "ai-urban-planning-zoning-simulator-server-routes-land-use-js-ai-results",
     "sourceProject": "AIUrbanPlanningZoningSimulator",
     "name": "ai_results",

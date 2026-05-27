@@ -7,6 +7,12 @@ Primary routes:
 - `/profiles`
 
 Feature routes:
+- `/planning-impact-review`
+- `/urban-plan-scenarios`
+- `/zoning-simulation`
+- `/mobility-impact-plan`
+- `/intersection-delay-review`
+- `/traffic-signal-optimization`
 - `/records`
 - `/incidents`
 - `/units`
